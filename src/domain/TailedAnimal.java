@@ -1,9 +1,9 @@
-package animals;
+package domain;
 
 import java.util.Date;
 
 /**
- * Classe rappresentante animali dotati di coda
+ * Classe rappresentante animali dotati di coda.
  * Estende Animale
  */
 public class TailedAnimal extends Animal {

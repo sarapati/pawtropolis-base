@@ -1,10 +1,10 @@
-package animals;
+package domain;
 
 
 import java.util.Date;
 
 /**
- * Classe generica per descrivere tutti gli animali
+ * Classe generica per descrivere tutti gli animali.
  */
 public class Animal {
     private String name;

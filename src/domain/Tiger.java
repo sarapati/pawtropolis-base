@@ -1,9 +1,9 @@
-package animals;
+package domain;
 
 import java.util.Date;
 
 /**
- * Classe che definisce l'animale "tigre"
+ * Classe che definisce l'animale "tigre".
  * Estende TailedAnimal
  */
 public class Tiger extends TailedAnimal {
