@@ -4,6 +4,7 @@ import domain.Animal;
 import domain.TailedAnimal;
 import domain.WingedAnimal;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -14,8 +15,22 @@ public class AnimalsController {
 
     private List<Animal> animalList;
 
-    public AnimalsController(List<Animal> animalList){
-        this.animalList = animalList;
+    public AnimalsController(){
+        animalList = new ArrayList<>();
+    }
+
+    /*
+    Restituisce la lista di tutti gli animali
+     */
+    public List<Animal> getAnimalList() {
+        return animalList;
+    }
+
+    /*
+    Aggiunge un esemplare di animale alla lista
+     */
+    public void addAnimalToList(Animal animal) {
+        animalList.add(animal);
     }
 
     /*

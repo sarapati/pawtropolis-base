@@ -32,19 +32,18 @@ public class Main {
 
         System.out.println("Lion name: "+l1.getName()+" - Tail length: "+l1.getTailLength()+" (expected: 80)");
 
-        List<Animal> list = new ArrayList<>();
-        list.add(l1);
-        list.add(l2);
-        list.add(l3);
-        list.add(t1);
-        list.add(t2);
-        list.add(t3);
-        list.add(e1);
-        list.add(e2);
-        list.add(e3);
 
+        AnimalsController a = new AnimalsController();
+        a.addAnimalToList(l1);
+        a.addAnimalToList(l2);
+        a.addAnimalToList(l3);
+        a.addAnimalToList(t1);
+        a.addAnimalToList(t2);
+        a.addAnimalToList(t3);
+        a.addAnimalToList(e1);
+        a.addAnimalToList(e2);
+        a.addAnimalToList(e3);
 
-        AnimalsController a = new AnimalsController(list);
         Animal tallestAnimal = a.findAnimalByMaxHeight();
         Animal shortestAnimal = a.findAnimalByMinHeight();
         Animal heaviestAnimal = a.findAnimalByMaxWeight();
