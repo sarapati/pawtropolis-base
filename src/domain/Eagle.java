@@ -18,6 +18,14 @@ public class Eagle extends WingedAnimal {
 
     @Override
     public String toString() {
-        return "Eagle{} " + super.toString();
+        return "Eagle{"+
+            "name='" + super.getName() + '\'' +
+                    ", favFood='" + super.getFavFood() + '\'' +
+                    ", age=" + super.getAge() +
+                    ", joinedIn=" + super.getJoinedIn() +
+                    ", weight=" + super.getWeight() +
+                    ", height=" + super.getHeight() +
+                    ", wingspan=" + super.getWingspan() +
+                    '}';
     }
 }

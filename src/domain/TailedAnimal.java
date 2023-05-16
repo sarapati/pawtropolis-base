@@ -29,8 +29,8 @@ public class TailedAnimal extends Animal {
     @Override
     public String toString() {
         return "TailedAnimal{" +
-                "name=" + super.getName() +
-                ", favFood=" + super.getFavFood() +
+                "name='" + super.getName() + '\'' +
+                ", favFood='" + super.getFavFood() + '\'' +
                 ", age=" + super.getAge() +
                 ", joinedIn=" + super.getJoinedIn() +
                 ", weight=" + super.getWeight() +

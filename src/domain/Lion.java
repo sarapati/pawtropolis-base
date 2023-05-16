@@ -18,6 +18,14 @@ public class Lion extends TailedAnimal {
 
     @Override
     public String toString() {
-        return "Lion{} " + super.toString();
+        return "Lion{" +
+                "name='" + super.getName() + '\'' +
+                ", favFood='" + super.getFavFood() + '\'' +
+                ", age=" + super.getAge() +
+                ", joinedIn=" + super.getJoinedIn() +
+                ", weight=" + super.getWeight() +
+                ", height=" + super.getHeight() +
+                ", tailLength=" + super.getTailLength() +
+                "} ";
     }
 }

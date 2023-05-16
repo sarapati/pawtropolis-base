@@ -29,8 +29,8 @@ public class WingedAnimal extends Animal {
     @Override
     public String toString() {
         return  "WingedAnimal{"+
-                "name=" + super.getName() +
-                ", favFood=" + super.getFavFood() +
+                "name='" + super.getName() + '\'' +
+                ", favFood='" + super.getFavFood() + '\'' +
                 ", age=" + super.getAge() +
                 ", joinedIn=" + super.getJoinedIn() +
                 ", weight=" + super.getWeight() +
