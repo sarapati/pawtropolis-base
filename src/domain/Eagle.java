@@ -1,9 +1,6 @@
 package domain;
 
 import java.time.LocalDate;
-import java.util.Date;
-
-// T.T ieri ha perso
 
 /**
  * Classe che definisce l'animale "aquila".

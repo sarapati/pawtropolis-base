@@ -2,7 +2,6 @@ package domain;
 
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Classe generica per descrivere tutti gli animali.

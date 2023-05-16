@@ -1,7 +1,6 @@
 package domain;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Classe rappresentante animali dotati di coda.
