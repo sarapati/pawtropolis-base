@@ -1,6 +1,8 @@
 import utils.AnimalsUtils;
 import domain.*;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,25 +15,22 @@ public class Main {
     public static void main(String[] args) {
         log.info("Loading lions...");
 
-        TailedAnimal l1 = new Lion("Gennaro", "carne di Zebra", 5, new Date(), 180, 120, 80);
-        TailedAnimal l2 = new Lion("Ciro", "carne di Gnu", 8, new Date(), 185, 100, 75);
-        TailedAnimal l3 = new Lion("Chanel", "carne di Gazzella", 8, new Date(), 110, 100, 77);
-
+        TailedAnimal l1 = new Lion("Gennaro", "carne di Zebra", 5, LocalDate.of(2018, Month.DECEMBER, 19), 180, 1.20, 80);
+        TailedAnimal l2 = new Lion("Ciro", "carne di Gnu", 8, LocalDate.of(2015, Month.NOVEMBER, 30), 185, 1.00, 75);
+        TailedAnimal l3 = new Lion("Chanel", "carne di Gazzella", 8, LocalDate.of(2022, Month.JULY, 17), 110, 1.00, 77);
 
         log.info("Loading tigers...");
 
-        TailedAnimal t1 = new Tiger("Rihanna", "carne di Cinghiale", 10, new Date(), 150, 200, 95);
-        TailedAnimal t2 = new Tiger("Jessica", "carne di Cervo", 13, new Date(), 175, 225, 85);
-        TailedAnimal t3 = new Tiger("Ludovico", "carne di Cinghiale", 16, new Date(), 200, 295, 90);
-
+        TailedAnimal t1 = new Tiger("Rihanna", "carne di Cinghiale", 10, LocalDate.of(2018, Month.DECEMBER, 3), 150, 2.00, 95);
+        TailedAnimal t2 = new Tiger("Jessica", "carne di Cervo", 13, LocalDate.of(2019, Month.APRIL, 24), 175, 2.25, 85);
+        TailedAnimal t3 = new Tiger("Ludovico", "carne di Cinghiale", 16, LocalDate.of(2012, Month.FEBRUARY, 5), 200, 2.95, 90);
 
         log.info("Loading eagles...");
 
-        WingedAnimal e1 = new Eagle("Jayson", "carne di Volpe", 34, new Date(), 4, 90, 200);
-        WingedAnimal e2 = new Eagle("Letizia", "carne di Coniglio", 10, new Date(), 3, 70, 190);
-        WingedAnimal e3 = new Eagle("Tommaso", "carne di Lepre", 18, new Date(), 2, 85, 210);
-
-
+        WingedAnimal e1 = new Eagle("Jayson", "carne di Volpe", 34, LocalDate.of(2006, Month.JUNE, 25), 4.1, 0.90, 200);
+        WingedAnimal e2 = new Eagle("Letizia", "carne di Coniglio", 10, LocalDate.of(2018, Month.DECEMBER, 3), 3.8, 0.70, 190);
+        WingedAnimal e3 = new Eagle("Tommaso", "carne di Lepre", 18, LocalDate.of(2010, Month.JUNE, 21), 2.5, 0.85, 210);
+        
         log.info("Loading done");
 
         System.out.println("Lion name: "+l1.getName()+" - Tail length: "+l1.getTailLength()+" (expected: 80)");
