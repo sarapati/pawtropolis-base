@@ -1,6 +1,7 @@
 package domain;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,7 +13,7 @@ public class WingedAnimal extends Animal {
 
     public WingedAnimal() {}
 
-    public WingedAnimal(String name, String favFood, int age, Date joinedIn, double weight, int height, float wingspan){
+    public WingedAnimal(String name, String favFood, int age, LocalDate joinedIn, double weight, double height, float wingspan){
         super(name, favFood, age, joinedIn, weight, height);
         this.wingspan = wingspan;
     }

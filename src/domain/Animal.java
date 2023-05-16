@@ -1,6 +1,7 @@
 package domain;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -10,12 +11,12 @@ public class Animal {
     private String name;
     private String favFood;
     private int age;
-    private Date joinedIn;
+    private LocalDate joinedIn;
     private double weight;
-    private int height;
+    private double height;
 
     public Animal() {}
-    public Animal(String name, String favFood, int age, Date joinedIn, double weight, int height) {
+    public Animal(String name, String favFood, int age, LocalDate joinedIn, double weight, double height) {
         this.name = name;
         this.favFood = favFood;
         this.age = age;
@@ -48,11 +49,11 @@ public class Animal {
         this.age = age;
     }
 
-    public Date getJoinedIn() {
+    public LocalDate getJoinedIn() {
         return joinedIn;
     }
 
-    public void setJoinedIn(Date joinedIn) {
+    public void setJoinedIn(LocalDate joinedIn) {
         this.joinedIn = joinedIn;
     }
 
@@ -64,11 +65,11 @@ public class Animal {
         this.weight = weight;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 

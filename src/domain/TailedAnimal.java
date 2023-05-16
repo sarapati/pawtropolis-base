@@ -1,5 +1,6 @@
 package domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,7 +13,7 @@ public class TailedAnimal extends Animal {
     public TailedAnimal() {
     }
 
-    public TailedAnimal(String name, String favFood, int age, Date joinedIn, double weight, int height, int tailLength){
+    public TailedAnimal(String name, String favFood, int age, LocalDate joinedIn, double weight, double height, int tailLength){
         super(name, favFood, age, joinedIn, weight, height);
         this.tailLength = tailLength;
     }
