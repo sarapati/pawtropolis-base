@@ -1,4 +1,4 @@
-import utils.AnimalsUtils;
+import control.AnimalsController;
 import domain.*;
 
 import java.time.LocalDate;
@@ -44,7 +44,7 @@ public class Main {
         list.add(e3);
 
 
-        AnimalsUtils a = new AnimalsUtils(list);
+        AnimalsController a = new AnimalsController(list);
         Animal tallestAnimal = a.findAnimalByMaxHeight();
         Animal shortestAnimal = a.findAnimalByMinHeight();
         Animal heaviestAnimal = a.findAnimalByMaxWeight();

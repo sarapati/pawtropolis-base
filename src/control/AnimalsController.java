@@ -1,4 +1,4 @@
-package utils;
+package control;
 
 import domain.Animal;
 import domain.TailedAnimal;
@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * Classe che implementa le operazioni di ricerca su tutti gli animali.
  */
-public class AnimalsUtils {
+public class AnimalsController {
 
     private List<Animal> animalList;
 
-    public AnimalsUtils(List<Animal> animalList){
+    public AnimalsController(List<Animal> animalList){
         this.animalList = animalList;
     }
 
