@@ -4,6 +4,7 @@ import domain.Animal;
 import domain.TailedAnimal;
 import domain.WingedAnimal;
 
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,49 +22,28 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale più alto
      */
     public Animal findAnimalByMaxHeight(){
-        Animal maxAnimal = animalList.get(0);
-        for(Animal a : animalList){
-            if(a.getHeight() > maxAnimal.getHeight())
-                maxAnimal = a;
-        }
-        return maxAnimal;
+        return animalList.stream().max(Comparator.comparing(Animal::getHeight)).get();
     }
 
     /*
     Ricerca e restituisce esemplare di animale più basso
      */
     public Animal findAnimalByMinHeight() {
-        Animal minAnimal = animalList.get(0);
-        for(Animal a : animalList){
-            if(a.getHeight() < minAnimal.getHeight())
-                minAnimal = a;
-        }
-        return minAnimal;
+        return animalList.stream().min(Comparator.comparing(Animal::getHeight)).get();
     }
-
 
     /*
     Ricerca e restituisce esemplare di animale più pesante
      */
     public Animal findAnimalByMaxWeight() {
-        Animal maxAnimal = animalList.get(0);
-        for(Animal a : animalList){
-            if(a.getWeight() > maxAnimal.getWeight())
-                maxAnimal = a;
-        }
-        return maxAnimal;
+        return animalList.stream().max(Comparator.comparing(Animal::getWeight)).get();
     }
 
     /*
     Ricerca e restituisce esemplare di animale più leggero
      */
     public Animal findAnimalByMinWeight(){
-        Animal minAnimal = animalList.get(0);
-        for(Animal a : animalList){
-            if(a.getWeight() < minAnimal.getWeight())
-                minAnimal = a;
-        }
-        return minAnimal;
+        return animalList.stream().min(Comparator.comparing(Animal::getWeight)).get();
     }
 
     /*
@@ -71,14 +51,7 @@ public class AnimalsController {
     con coda più lunga
      */
     public TailedAnimal findAnimalByLongestTail(){
-        TailedAnimal maxAnimal = new TailedAnimal();
-        for(Animal a : animalList){
-            if(a instanceof TailedAnimal) {
-                if (((TailedAnimal) a).getTailLength() > maxAnimal.getTailLength())
-                    maxAnimal = (TailedAnimal) a;
-            }
-        }
-        return maxAnimal;
+        return animalList.stream().filter(TailedAnimal.class::isInstance).map(TailedAnimal.class::cast).max(Comparator.comparing(TailedAnimal::getTailLength)).get();
     }
 
     /*
@@ -86,13 +59,7 @@ public class AnimalsController {
     con maggior apertura alare
    */
     public WingedAnimal findAnimalByWidestWingspan(){
-        WingedAnimal maxAnimal = new WingedAnimal();
-        for(Animal a : animalList){
-            if(a instanceof WingedAnimal) {
-                if (((WingedAnimal) a).getWingspan() > maxAnimal.getWingspan())
-                    maxAnimal = (WingedAnimal) a;
-            }
-        }
-        return maxAnimal;
+        return animalList.stream().filter(WingedAnimal.class::isInstance).map(WingedAnimal.class::cast).max(Comparator.comparing(WingedAnimal::getWingspan)).get();
+
     }
 }
