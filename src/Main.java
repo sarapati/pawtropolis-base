@@ -12,7 +12,7 @@ public class Main {
 
         Lion l1 = new Lion("Gennaro", "carne di Zebra", 5, LocalDate.of(2018, Month.DECEMBER, 19), 180, 1.20, 80);
         Lion l2 = new Lion("Ciro", "carne di Gnu", 8, LocalDate.of(2015, Month.NOVEMBER, 30), 185, 1.00, 75);
-        Lion l3 = new Lion("Chanel", "carne di Gazzella", 8, LocalDate.of(2022, Month.JULY, 17), 110, 1.00, 77);
+        Lion l3 = new Lion("Chanel", "carne di Gazzella", 8, LocalDate.of(2022, Month.JULY, 17), 110, 1.10, 77);
 
         log.info("Loading tigers...");
 
@@ -42,17 +42,17 @@ public class Main {
         a.addAnimalToList(e2);
         a.addAnimalToList(e3);
 
-        Animal tallestAnimal = a.getTallestAnimal();
-        Animal shortestAnimal = a.getShortestAnimal();
-        Animal heaviestAnimal = a.getHeaviestAnimal();
-        Animal lighterAnimal = a.getLightestAnimal();
+        Animal tallestAnimal = a.getTallestAnimal("Eagle");
+        Animal shortestAnimal = a.getShortestAnimal("Lion");
+        Animal heaviestAnimal = a.getHeaviestAnimal("Tiger");
+        Animal lighterAnimal = a.getLightestAnimal("Eagle");
         TailedAnimal longestTailAnimal = a.getAnimalWithLongestTail();
         WingedAnimal widestWingspanAnimal = a.getAnimalWithWidestWingspan();
 
-        System.out.println("Tallest animal found: "+tallestAnimal.getName()+" (expected: LUDOVICO)");
-        System.out.println("Shortest animal found: "+shortestAnimal.getName()+" (expected: LETIZIA)");
-        System.out.println("Heaviest animal found: "+heaviestAnimal.getName()+" (expected: LUDOVICO)");
-        System.out.println("Lighter animal found: "+lighterAnimal.getName()+" (expected: TOMMASO)");
+        System.out.println("Tallest eagle found: "+tallestAnimal.getName()+" (expected: JAYSON)");
+        System.out.println("Shortest lion found: "+shortestAnimal.getName()+" (expected: CIRO)");
+        System.out.println("Heaviest tiger found: "+heaviestAnimal.getName()+" (expected: LUDOVICO)");
+        System.out.println("Lighter eagle found: "+lighterAnimal.getName()+" (expected: TOMMASO)");
         System.out.println("Longest tail animal found: "+longestTailAnimal.getName()+" (expected: RIHANNA)");
         System.out.println("Widest wingspan animal found: "+widestWingspanAnimal.getName()+" (expected: TOMMASO)");
     }

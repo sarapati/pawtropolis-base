@@ -4,9 +4,7 @@ import domain.Animal;
 import domain.TailedAnimal;
 import domain.WingedAnimal;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Classe che implementa le operazioni di ricerca su tutti gli animali.
@@ -36,29 +34,29 @@ public class AnimalsController {
     /*
     Ricerca e restituisce esemplare di animale più alto
      */
-    public Animal getTallestAnimal(){
-        return animalList.stream().max(Comparator.comparing(Animal::getHeight)).orElse(null);
+    public Animal getTallestAnimal(String type){
+        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).max(Comparator.comparing(Animal::getHeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più basso
      */
-    public Animal getShortestAnimal() {
-        return animalList.stream().min(Comparator.comparing(Animal::getHeight)).orElse(null);
+    public Animal getShortestAnimal(String type) {
+        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).min(Comparator.comparing(Animal::getHeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più pesante
      */
-    public Animal getHeaviestAnimal() {
-        return animalList.stream().max(Comparator.comparing(Animal::getWeight)).orElse(null);
+    public Animal getHeaviestAnimal(String type) {
+        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).max(Comparator.comparing(Animal::getWeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più leggero
      */
-    public Animal getLightestAnimal(){
-        return animalList.stream().min(Comparator.comparing(Animal::getWeight)).orElse(null);
+    public Animal getLightestAnimal(String type){
+        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).min(Comparator.comparing(Animal::getWeight)).orElse(null);
     }
 
     /*
