@@ -37,28 +37,28 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale più alto
      */
     public Animal getTallestAnimal(){
-        return animalList.stream().max(Comparator.comparing(Animal::getHeight)).get();
+        return animalList.stream().max(Comparator.comparing(Animal::getHeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più basso
      */
     public Animal getShortestAnimal() {
-        return animalList.stream().min(Comparator.comparing(Animal::getHeight)).get();
+        return animalList.stream().min(Comparator.comparing(Animal::getHeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più pesante
      */
     public Animal getHeaviestAnimal() {
-        return animalList.stream().max(Comparator.comparing(Animal::getWeight)).get();
+        return animalList.stream().max(Comparator.comparing(Animal::getWeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più leggero
      */
     public Animal getLightestAnimal(){
-        return animalList.stream().min(Comparator.comparing(Animal::getWeight)).get();
+        return animalList.stream().min(Comparator.comparing(Animal::getWeight)).orElse(null);
     }
 
     /*
@@ -66,7 +66,7 @@ public class AnimalsController {
     con coda più lunga
      */
     public TailedAnimal getAnimalWithLongestTail(){
-        return animalList.stream().filter(TailedAnimal.class::isInstance).map(TailedAnimal.class::cast).max(Comparator.comparing(TailedAnimal::getTailLength)).get();
+        return animalList.stream().filter(TailedAnimal.class::isInstance).map(TailedAnimal.class::cast).max(Comparator.comparing(TailedAnimal::getTailLength)).orElse(null);
     }
 
     /*
@@ -74,7 +74,7 @@ public class AnimalsController {
     con maggior apertura alare
    */
     public WingedAnimal getAnimalWithWidestWingspan(){
-        return animalList.stream().filter(WingedAnimal.class::isInstance).map(WingedAnimal.class::cast).max(Comparator.comparing(WingedAnimal::getWingspan)).get();
+        return animalList.stream().filter(WingedAnimal.class::isInstance).map(WingedAnimal.class::cast).max(Comparator.comparing(WingedAnimal::getWingspan)).orElse(null);
 
     }
 }
