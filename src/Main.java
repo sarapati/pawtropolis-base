@@ -42,12 +42,12 @@ public class Main {
         a.addAnimalToList(e2);
         a.addAnimalToList(e3);
 
-        Animal tallestAnimal = a.findAnimalByMaxHeight();
-        Animal shortestAnimal = a.findAnimalByMinHeight();
-        Animal heaviestAnimal = a.findAnimalByMaxWeight();
-        Animal lighterAnimal = a.findAnimalByMinWeight();
-        TailedAnimal longestTailAnimal = a.findAnimalByLongestTail();
-        WingedAnimal widestWingspanAnimal = a.findAnimalByWidestWingspan();
+        Animal tallestAnimal = a.getTallestAnimal();
+        Animal shortestAnimal = a.getShortestAnimal();
+        Animal heaviestAnimal = a.getHeaviestAnimal();
+        Animal lighterAnimal = a.getLightestAnimal();
+        TailedAnimal longestTailAnimal = a.getAnimalWithLongestTail();
+        WingedAnimal widestWingspanAnimal = a.getAnimalWithWidestWingspan();
 
         System.out.println("Tallest animal found: "+tallestAnimal.getName()+" (expected: LUDOVICO)");
         System.out.println("Shortest animal found: "+shortestAnimal.getName()+" (expected: LETIZIA)");

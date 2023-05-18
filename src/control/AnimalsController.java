@@ -36,28 +36,28 @@ public class AnimalsController {
     /*
     Ricerca e restituisce esemplare di animale più alto
      */
-    public Animal findAnimalByMaxHeight(){
+    public Animal getTallestAnimal(){
         return animalList.stream().max(Comparator.comparing(Animal::getHeight)).get();
     }
 
     /*
     Ricerca e restituisce esemplare di animale più basso
      */
-    public Animal findAnimalByMinHeight() {
+    public Animal getShortestAnimal() {
         return animalList.stream().min(Comparator.comparing(Animal::getHeight)).get();
     }
 
     /*
     Ricerca e restituisce esemplare di animale più pesante
      */
-    public Animal findAnimalByMaxWeight() {
+    public Animal getHeaviestAnimal() {
         return animalList.stream().max(Comparator.comparing(Animal::getWeight)).get();
     }
 
     /*
     Ricerca e restituisce esemplare di animale più leggero
      */
-    public Animal findAnimalByMinWeight(){
+    public Animal getLightestAnimal(){
         return animalList.stream().min(Comparator.comparing(Animal::getWeight)).get();
     }
 
@@ -65,7 +65,7 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale dotato di coda
     con coda più lunga
      */
-    public TailedAnimal findAnimalByLongestTail(){
+    public TailedAnimal getAnimalWithLongestTail(){
         return animalList.stream().filter(TailedAnimal.class::isInstance).map(TailedAnimal.class::cast).max(Comparator.comparing(TailedAnimal::getTailLength)).get();
     }
 
@@ -73,7 +73,7 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale dotato di ali
     con maggior apertura alare
    */
-    public WingedAnimal findAnimalByWidestWingspan(){
+    public WingedAnimal getAnimalWithWidestWingspan(){
         return animalList.stream().filter(WingedAnimal.class::isInstance).map(WingedAnimal.class::cast).max(Comparator.comparing(WingedAnimal::getWingspan)).get();
 
     }
