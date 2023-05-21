@@ -32,20 +32,20 @@ public class Main {
 
 
         AnimalsController a = new AnimalsController();
-        a.addAnimalToList(l1);
-        a.addAnimalToList(l2);
-        a.addAnimalToList(l3);
-        a.addAnimalToList(t1);
-        a.addAnimalToList(t2);
-        a.addAnimalToList(t3);
-        a.addAnimalToList(e1);
-        a.addAnimalToList(e2);
-        a.addAnimalToList(e3);
+        a.addAnimalToMap(l1);
+        a.addAnimalToMap(l2);
+        a.addAnimalToMap(l3);
+        a.addAnimalToMap(t1);
+        a.addAnimalToMap(t2);
+        a.addAnimalToMap(t3);
+        a.addAnimalToMap(e1);
+        a.addAnimalToMap(e2);
+        a.addAnimalToMap(e3);
 
-        Animal tallestAnimal = a.getTallestAnimal("Eagle");
-        Animal shortestAnimal = a.getShortestAnimal("Lion");
-        Animal heaviestAnimal = a.getHeaviestAnimal("Tiger");
-        Animal lighterAnimal = a.getLightestAnimal("Eagle");
+        Eagle tallestAnimal = a.getTallestAnimal(Eagle.class);
+        Lion shortestAnimal = a.getShortestAnimal(Lion.class);
+        Tiger heaviestAnimal = a.getHeaviestAnimal(Tiger.class);
+        Eagle lighterAnimal = a.getLightestAnimal(Eagle.class);
         TailedAnimal longestTailAnimal = a.getAnimalWithLongestTail();
         WingedAnimal widestWingspanAnimal = a.getAnimalWithWidestWingspan();
 
