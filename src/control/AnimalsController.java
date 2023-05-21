@@ -5,58 +5,72 @@ import domain.TailedAnimal;
 import domain.WingedAnimal;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Classe che implementa le operazioni di ricerca su tutti gli animali.
  */
 public class AnimalsController {
 
-    private List<Animal> animalList;
+    private Map<Class<? extends Animal>, List<Animal>> map;
 
     public AnimalsController(){
-        animalList = new ArrayList<>();
+        map = new HashMap<>();
     }
 
     /*
-    Restituisce la lista di tutti gli animali
+    Aggiunge un esemplare di animale alla mappa
      */
-    public List<Animal> getAnimalList() {
-        return animalList;
-    }
-
-    /*
-    Aggiunge un esemplare di animale alla lista
-     */
-    public void addAnimalToList(Animal animal) {
-        animalList.add(animal);
+    public void addAnimalToMap(Animal animal) {
+        if(!map.containsKey(animal.getClass())) {
+            List<Animal> list = new ArrayList<>();
+            map.put(animal.getClass(),list);
+        }
+        map.get(animal.getClass()).add(animal);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più alto
      */
-    public Animal getTallestAnimal(String type){
-        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).max(Comparator.comparing(Animal::getHeight)).orElse(null);
+    public <T extends Animal> T getTallestAnimal(Class<T> clazz){
+        return map.getOrDefault(clazz, null)
+                .stream()
+                .filter(clazz::isInstance)
+                .map(clazz::cast)
+                .max(Comparator.comparing(T::getHeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più basso
      */
-    public Animal getShortestAnimal(String type) {
-        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).min(Comparator.comparing(Animal::getHeight)).orElse(null);
+    public <T extends Animal> T  getShortestAnimal(Class<T> clazz) {
+        return map.getOrDefault(clazz, null)
+                .stream()
+                .filter(clazz::isInstance)
+                .map(clazz::cast)
+                .min(Comparator.comparing(T::getHeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più pesante
      */
-    public Animal getHeaviestAnimal(String type) {
-        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).max(Comparator.comparing(Animal::getWeight)).orElse(null);
+    public <T extends Animal> T getHeaviestAnimal(Class<T> clazz) {
+        return map.getOrDefault(clazz, null)
+                .stream()
+                .filter(clazz::isInstance)
+                .map(clazz::cast)
+                .max(Comparator.comparing(T::getWeight)).orElse(null);
     }
 
     /*
     Ricerca e restituisce esemplare di animale più leggero
      */
-    public Animal getLightestAnimal(String type){
-        return animalList.stream().filter(animal -> animal.getClass().getSimpleName().equals(type)).min(Comparator.comparing(Animal::getWeight)).orElse(null);
+    public <T extends Animal> T getLightestAnimal(Class<T> clazz){
+       return  map.getOrDefault(clazz, null)
+                .stream()
+                .filter(clazz::isInstance)
+                .map(clazz::cast)
+                .min(Comparator.comparing(T::getWeight)).orElse(null);
     }
 
     /*
@@ -64,7 +78,8 @@ public class AnimalsController {
     con coda più lunga
      */
     public TailedAnimal getAnimalWithLongestTail(){
-        return animalList.stream().filter(TailedAnimal.class::isInstance).map(TailedAnimal.class::cast).max(Comparator.comparing(TailedAnimal::getTailLength)).orElse(null);
+        return getAnimalsBySpecificClass(TailedAnimal.class).stream()
+                .max(Comparator.comparing(TailedAnimal::getTailLength)).orElse(null);
     }
 
     /*
@@ -72,7 +87,17 @@ public class AnimalsController {
     con maggior apertura alare
    */
     public WingedAnimal getAnimalWithWidestWingspan(){
-        return animalList.stream().filter(WingedAnimal.class::isInstance).map(WingedAnimal.class::cast).max(Comparator.comparing(WingedAnimal::getWingspan)).orElse(null);
+        return getAnimalsBySpecificClass(WingedAnimal.class).stream()
+                .max(Comparator.comparing(WingedAnimal::getWingspan)).orElse(null);
 
+    }
+
+    private <T extends Animal> List<T> getAnimalsBySpecificClass(Class<T> clazz){
+        return map.values()
+                .stream()
+                .flatMap(Collection::stream)
+                .filter(clazz::isInstance)
+                .map(clazz::cast)
+                .collect(Collectors.toList());
     }
 }
