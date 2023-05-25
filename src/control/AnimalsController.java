@@ -21,7 +21,7 @@ public class AnimalsController {
     /*
     Aggiunge un esemplare di animale alla mappa
      */
-    public void addAnimalToMap(Animal animal) {
+    public void addAnimal(Animal animal) {
         if(!map.containsKey(animal.getClass())) {
             List<Animal> list = new ArrayList<>();
             map.put(animal.getClass(),list);
@@ -32,7 +32,7 @@ public class AnimalsController {
     /*
     Ricerca e restituisce esemplare di animale più alto
      */
-    public <T extends Animal> T getTallestAnimal(Class<T> clazz){
+    public <T extends Animal> T getTallestAnimalBySpecies(Class<T> clazz){
         return map.getOrDefault(clazz, null)
                 .stream()
                 .filter(clazz::isInstance)
@@ -43,7 +43,7 @@ public class AnimalsController {
     /*
     Ricerca e restituisce esemplare di animale più basso
      */
-    public <T extends Animal> T  getShortestAnimal(Class<T> clazz) {
+    public <T extends Animal> T getShortestAnimalBySpecies(Class<T> clazz) {
         return map.getOrDefault(clazz, null)
                 .stream()
                 .filter(clazz::isInstance)
@@ -54,7 +54,7 @@ public class AnimalsController {
     /*
     Ricerca e restituisce esemplare di animale più pesante
      */
-    public <T extends Animal> T getHeaviestAnimal(Class<T> clazz) {
+    public <T extends Animal> T getHeaviestAnimalBySpecies(Class<T> clazz) {
         return map.getOrDefault(clazz, null)
                 .stream()
                 .filter(clazz::isInstance)
@@ -65,7 +65,7 @@ public class AnimalsController {
     /*
     Ricerca e restituisce esemplare di animale più leggero
      */
-    public <T extends Animal> T getLightestAnimal(Class<T> clazz){
+    public <T extends Animal> T getLightestAnimalBySpecies(Class<T> clazz){
        return  map.getOrDefault(clazz, null)
                 .stream()
                 .filter(clazz::isInstance)
