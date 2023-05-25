@@ -33,7 +33,7 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale più alto
      */
     public <T extends Animal> T getTallestAnimalBySpecies(Class<T> clazz){
-        return map.getOrDefault(clazz, null)
+        return map.getOrDefault(clazz, List.of())
                 .stream()
                 .filter(clazz::isInstance)
                 .map(clazz::cast)
@@ -44,7 +44,7 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale più basso
      */
     public <T extends Animal> T getShortestAnimalBySpecies(Class<T> clazz) {
-        return map.getOrDefault(clazz, null)
+        return map.getOrDefault(clazz, List.of())
                 .stream()
                 .filter(clazz::isInstance)
                 .map(clazz::cast)
@@ -55,7 +55,7 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale più pesante
      */
     public <T extends Animal> T getHeaviestAnimalBySpecies(Class<T> clazz) {
-        return map.getOrDefault(clazz, null)
+        return map.getOrDefault(clazz, List.of())
                 .stream()
                 .filter(clazz::isInstance)
                 .map(clazz::cast)
@@ -66,7 +66,7 @@ public class AnimalsController {
     Ricerca e restituisce esemplare di animale più leggero
      */
     public <T extends Animal> T getLightestAnimalBySpecies(Class<T> clazz){
-       return  map.getOrDefault(clazz, null)
+       return  map.getOrDefault(clazz, List.of())
                 .stream()
                 .filter(clazz::isInstance)
                 .map(clazz::cast)
