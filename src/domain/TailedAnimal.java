@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * Classe rappresentante animali dotati di coda.
  * Estende Animale
  */
-public class TailedAnimal extends Animal {
+public abstract class TailedAnimal extends Animal {
     private int tailLength;
 
     public TailedAnimal() {

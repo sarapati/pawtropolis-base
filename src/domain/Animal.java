@@ -6,7 +6,7 @@ import java.time.LocalDate;
 /**
  * Classe generica per descrivere tutti gli animali.
  */
-public class Animal {
+public abstract class Animal {
     private String name;
     private String favFood;
     private int age;

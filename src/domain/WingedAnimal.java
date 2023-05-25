@@ -7,7 +7,7 @@ import java.time.LocalDate;
  * Classe rappresentante animali dotati di ali.
  * Estende Animale
  */
-public class WingedAnimal extends Animal {
+public abstract class WingedAnimal extends Animal {
     private float wingspan;
 
     public WingedAnimal() {}
